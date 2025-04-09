@@ -48,13 +48,13 @@ export default function BannerSection() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{ 
-          backgroundImage: "url('/assets/background.jpg')",
-          backgroundAttachment: "fixed"
+          backgroundImage: "url('/assets/bannerBg.png')",
+          // backgroundAttachment: "fixed"
         }}
       />
       
       {/* Centered carousel container using shadcn Carousel */}
-      <div className="relative w-full max-w-5xl px-4 md:px-8 z-10">
+      <div className="relative w-full max-w-[1300px] px-4 md:px-8 z-10">
         <Carousel
           opts={{
             align: "center",
@@ -72,7 +72,7 @@ export default function BannerSection() {
                     boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3)'
                   }}>
                   <div 
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-contain bg-center"
                     style={{ backgroundImage: `url(${slide.backgroundImage})` }}
                   />
                   {/* <div className="absolute inset-0 bg-black bg-opacity-40" /> */}

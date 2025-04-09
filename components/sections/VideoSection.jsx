@@ -1,14 +1,13 @@
-// components/sections/VideoSection.jsx
 "use client";
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Play } from 'lucide-react';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-//thumbnail - https://img.youtube.com/vi/youtube-video-id/maxresdefault.jpg
+
 const videos = [
     {
         id: 1,
@@ -51,8 +50,13 @@ export default function VideoSection() {
     };
 
     return (
-        <section className="py-16" style={{ backgroundColor: '#08381a' }}>
-            <div className="container mx-auto px-4">
+        <section className="relative overflow-hidden py-16" style={{ backgroundColor: '#08381a' }}>
+            {/* Fixed background */}
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-70"
+                style={{ backgroundImage: "url('/assets/bannerBg.png')" }} // Use the same background image
+            />
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
                         Videos
@@ -87,7 +91,7 @@ export default function VideoSection() {
                                                     className="absolute inset-0 bg-cover bg-center"
                                                     style={{ backgroundImage: `url(${video.thumbnail})` }}
                                                 />
-                                                <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                                     <div className="w-16 h-16 rounded-full bg-black/70 flex items-center justify-center">
                                                         <Play size={32} className="text-white" />
                                                     </div>

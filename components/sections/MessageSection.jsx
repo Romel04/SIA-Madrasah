@@ -1,4 +1,3 @@
-// components/sections/MessageSection.jsx
 "use client";
 
 import { useEffect, useRef } from 'react';
@@ -31,20 +30,24 @@ export default function MessageSection() {
     const plugin = useRef(Autoplay({ delay: 7000, stopOnInteraction: true }));
 
     return (
-        <section className="py-16 bg-[#08381a]">
-            <div className="container mx-auto px-4">
+        <section className="relative overflow-hidden flex items-center justify-center py-16"style={{ backgroundColor: '#08381a' }}>
+            {/* Fixed background */}
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-70"
+                style={{ backgroundImage: "url('/assets/bannerBg.png')", }} // Update the path to your background image
+            />
+
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
-                Messages from Leaders
+                    <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
+                        Messages from Leaders
                         <span className="absolute left-0 -bottom-2 w-full h-1 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
                         <span className="absolute right-0 -bottom-4 w-full h-1 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
-
                     </h2>
-                    {/* <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#08381a' }}></div> */}
                 </div>
 
                 {/* Centered carousel container using shadcn Carousel */}
-                <div className="relative w-full max-w-5xl mx-auto">
+                <div className="relative w-full max-w-6xl mx-auto">
                     <Carousel
                         opts={{
                             align: "center",

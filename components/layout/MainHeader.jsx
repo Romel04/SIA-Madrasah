@@ -56,7 +56,7 @@ export default function MainHeader() {
   ];
 
   return (
-    <div className="w-full bg-[#08381a] text-white py-2 px-4 md:px-6 lg:px-8 sticky top-0 z-30">
+    <div className="w-full bg-[#08381a] text-white py-2 px-4 md:px-6 lg:px-8 sticky top-0 z-30 shadow-xl shadow-black">
       <div className="container mx-auto flex items-center justify-between">
         
       <div className="hidden md:flex w-[130px]"></div>

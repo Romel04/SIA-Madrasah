@@ -1,4 +1,3 @@
-// components/sections/CounterSection.jsx
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
@@ -86,15 +85,19 @@ export default function CounterSection() {
     }, [inView]);
 
     return (
-        <section ref={sectionRef} className="py-16" style={{ backgroundColor: '#08381a' }}>
-            <div className="container mx-auto px-4">
+        <section ref={sectionRef} className="relative overflow-hidden py-16"style={{ backgroundColor: '#08381a' }}>
+            {/* Fixed background */}
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-70"
+                style={{ backgroundImage: "url('/assets/bannerBg.png')" }} // Use the same background image
+            />
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
                         Our Achievement
                         <span className="absolute left-0 -bottom-2 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
                         <span className="absolute right-0 -bottom-4 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
                     </h2>
-                    {/* <div className="w-24 h-1 mx-auto" style={{ backgroundColor: 'white' }}></div> */}
                 </div>
 
                 <div className="grid md:grid-cols-4 gap-6">
