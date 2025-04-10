@@ -89,8 +89,8 @@ export default function AffiliatesSection() {
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
                         Affiliate Partners
-                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
-                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
+                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] animate-underline-left"></span>
+                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] animate-underline-right"></span>
                     </h2>
                     <p className="text-gray-700 max-w-2xl mx-auto mt-4">
                         We collaborate with various institutions to enhance the quality of education and broaden opportunities for our students.
@@ -137,6 +137,44 @@ export default function AffiliatesSection() {
                     </Carousel>
                 </div>
             </div>
+
+            <style jsx>{`
+    @keyframes underline-left {
+        0% {
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        50% {
+            transform: scaleX(1);
+        }
+        100% {
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+    }
+
+    @keyframes underline-right {
+        0% {
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+        50% {
+            transform: scaleX(1);
+        }
+        100% {
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+    }
+
+    .animate-underline-left {
+        animation: underline-left 2s infinite;
+    }
+
+    .animate-underline-right {
+        animation: underline-right 2s infinite;
+    }
+`}</style>
         </section>
     );
 }

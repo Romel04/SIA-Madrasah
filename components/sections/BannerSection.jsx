@@ -66,13 +66,13 @@ export default function BannerSection() {
           <CarouselContent>
             {bannerData.map((slide) => (
               <CarouselItem key={slide.id}>
-                <Card className="relative overflow-hidden rounded-lg shadow-2xl border-0" 
+                <Card className="relative overflow-hidden rounded-lg shadow-2xl border-0 h-[250px] sm:h-[500px]" 
                   style={{ 
-                    height: "500px", 
+                    // height: "500px", 
                     boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3)'
                   }}>
                   <div 
-                    className="absolute inset-0 bg-contain bg-center"
+                    className="absolute inset-0 bg-cover sm:bg-contain bg-center"
                     style={{ backgroundImage: `url(${slide.backgroundImage})` }}
                   />
                   {/* <div className="absolute inset-0 bg-black bg-opacity-40" /> */}

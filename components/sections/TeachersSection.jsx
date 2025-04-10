@@ -1,4 +1,3 @@
-// components/sections/TeachersSection.jsx
 "use client";
 
 import { useRef } from 'react';
@@ -49,26 +48,22 @@ export default function TeachersSection() {
     const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
     return (
-        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
-        <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/assets/bg2.jpg')" }} // Set your background image here
-        />
+        <section className="py-8 relative overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/bg2.jpg')" }} // Set your background image here
+            />
             <div className="container mx-auto px-4">
-                <div className="text-center mb-10">
-                    <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
+                <div className="text-center">
+                    <h2 className="text-3xl font-bold mb-4 relative inline-block" style={{ color: '#08381a' }}>
                         Our Teachers
-                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
-                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
+                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] animate-underline-left"></span>
+                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] animate-underline-right"></span>
                     </h2>
-                    <p className="text-gray-700 max-w-2xl mx-auto mt-4">
-                        Meet our team of qualified scholars and educators dedicated to nurturing the next generation
-                        of Islamic scholars and responsible citizens.
-                    </p>
                 </div>
 
                 {/* Shadcn Carousel Implementation */}
-                <div className="relative w-full max-w-5xl mx-auto">
+                <div className="relative w-full max-w-5xl mx-auto mt-4">
                     <Carousel
                         opts={{
                             align: "center",
@@ -104,6 +99,44 @@ export default function TeachersSection() {
                     </Carousel>
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes underline-left {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                }
+
+                @keyframes underline-right {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                }
+
+                .animate-underline-left {
+                    animation: underline-left 2s infinite;
+                }
+
+                .animate-underline-right {
+                    animation: underline-right 2s infinite;
+                }
+            `}</style>
         </section>
     );
 }

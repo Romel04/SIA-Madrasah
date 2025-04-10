@@ -95,8 +95,8 @@ export default function CounterSection() {
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
                         Our Achievement
-                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
-                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
+                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-white animate-underline-left"></span>
+                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-white animate-underline-right"></span>
                     </h2>
                 </div>
 
@@ -118,6 +118,45 @@ export default function CounterSection() {
                     ))}
                 </div>
             </div>
+            
+
+            <style jsx>{`
+                @keyframes underline-left {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                }
+
+                @keyframes underline-right {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                }
+
+                .animate-underline-left {
+                    animation: underline-left 2s infinite;
+                }
+
+                .animate-underline-right {
+                    animation: underline-right 2s infinite;
+                }
+            `}</style>
         </section>
     );
 }

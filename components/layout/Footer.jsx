@@ -14,7 +14,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-[#08381a] text-white pt-12 pb-6 px-3 sm:px-8">
+        <footer id='footer' className="bg-[#08381a] text-white pt-12 pb-6 px-3 sm:px-8">
             <div className="container mx-auto">
                 {/* Footer top section */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

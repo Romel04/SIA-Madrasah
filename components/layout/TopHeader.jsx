@@ -16,7 +16,7 @@ export default function TopHeader() {
   
   return (
     <div className="w-full bg-white py-1 px-4 md:px-6 lg:px-8 border-b">
-      <div className="container mx-auto flex sm:flex-col md:flex-row items-center justify-between gap-x-8">
+      <div className="container mx-auto flex sm:flex-col md:flex-row items-center justify-between sm:gap-x-8">
         <div className="flex items-center mb-4 md:mb-0">
           <Image 
             src="/assets/logo.png" 

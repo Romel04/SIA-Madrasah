@@ -18,8 +18,8 @@ export default function AboutSection() {
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
                         About Us
-                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
-                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
+                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] animate-underline-left"></span>
+                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] animate-underline-right"></span>
                     </h2>
                 </div>
 
@@ -34,14 +34,53 @@ export default function AboutSection() {
                     <p className="text-gray-700 mb-8">
                         We are determined to shape it as the best educational institution of Sylhet as well as Bangladesh, maintaining consistency in the acquired result and reputation.
                     </p>
-                    <Button
+                    {/* <Button
                         className="text-white"
                         style={{ backgroundColor: '#08381a', borderColor: '#08381a' }}
                     >
                         Learn More About Us
-                    </Button>
+                    </Button> */}
                 </div>
             </div>
+            
+
+            <style jsx>{`
+                @keyframes underline-left {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                }
+
+                @keyframes underline-right {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                }
+
+                .animate-underline-left {
+                    animation: underline-left 2s infinite;
+                }
+
+                .animate-underline-right {
+                    animation: underline-right 2s infinite;
+                }
+            `}</style>
         </section>
     );
 }

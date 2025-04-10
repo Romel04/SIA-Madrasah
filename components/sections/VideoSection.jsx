@@ -60,8 +60,8 @@ export default function VideoSection() {
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: 'white' }}>
                         Videos
-                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
-                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-[white] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
+                        <span className="absolute left-0 -bottom-2 w-full h-1 bg-white animate-underline-left"></span>
+                        <span className="absolute right-0 -bottom-4 w-full h-1 bg-white animate-underline-right"></span>
                     </h2>
                     <p className="text-white max-w-2xl mx-auto mt-4">
                         Watch videos about our madrasah, activities, and educational programs.
@@ -113,8 +113,9 @@ export default function VideoSection() {
             <Dialog open={showModal} onOpenChange={setShowModal}>
                 <DialogHeader></DialogHeader>
                 <DialogTitle></DialogTitle>
-                <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-                    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+
+                <DialogContent className="p-0 bg-transparent border-none !max-w-4xl">
+                    <div className="relative bg-white rounded-lg shadow-lg w-full max-w-4xl mx-auto ">
                         {selectedVideo && (
                             <>
                                 <div className="aspect-video">
@@ -136,6 +137,44 @@ export default function VideoSection() {
                     </div>
                 </DialogContent>
             </Dialog>
+
+            <style jsx>{`
+                @keyframes underline-left {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: left;
+                    }
+                }
+
+                @keyframes underline-right {
+                    0% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    50% {
+                        transform: scaleX(1);
+                    }
+                    100% {
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                }
+
+                .animate-underline-left {
+                    animation: underline-left 2s infinite;
+                }
+
+                .animate-underline-right {
+                    animation: underline-right 2s infinite;
+                }
+            `}</style>
         </section>
     );
 }
