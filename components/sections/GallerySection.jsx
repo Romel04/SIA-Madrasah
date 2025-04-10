@@ -1,4 +1,3 @@
-// components/sections/GallerySection.jsx
 "use client";
 
 import { useRef, useState } from 'react';
@@ -66,22 +65,24 @@ export default function GallerySection() {
     };
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/bg2.jpg')" }} // Set your background image here
+            />
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
-
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
                         Gallery
                         <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
                         <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
                     </h2>
-                    {/* <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: '#08381a' }}></div> */}
                     <p className="text-gray-700 max-w-2xl mx-auto mt-4">
                         Take a visual tour of our institution, facilities, and activities.
                     </p>
                 </div>
 
-                {/* Shadcn Carousel Implementation */}
+                {/* Carousel Implementation */}
                 <div className="relative w-full max-w-5xl mx-auto">
                     <Carousel
                         opts={{

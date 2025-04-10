@@ -49,7 +49,11 @@ export default function TeachersSection() {
     const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
+        <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/assets/bg2.jpg')" }} // Set your background image here
+        />
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>

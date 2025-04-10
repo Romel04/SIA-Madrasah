@@ -26,11 +26,11 @@ export default function Footer() {
                                 alt="Sirajul Islam Alim Madrasah"
                                 width={80}
                                 height={80}
-                                className="mr-4 w-[50px] h-[50px]"
+                                className="mr-4 w-[60px] h-[60px]"
                             />
                             <h2 className="text-xl font-bold">Sirajul Islam Alim Madrasah</h2>
                         </div>
-                        <p className="text-white mb-6 text-center md:text-left">
+                        <p className="text-white mb-6 text-center md:text-justify">
                             Sirajul Islam Alim Madrasah is dedicated to providing quality Islamic education along with modern curriculum.
                             Established in 1980, our institution has been serving the community with dedication and excellence.
                         </p>

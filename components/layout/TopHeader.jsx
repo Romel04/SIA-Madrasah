@@ -15,7 +15,7 @@ export default function TopHeader() {
   };
   
   return (
-    <div className="w-full bg-white py-4 px-4 md:px-6 lg:px-8 border-b">
+    <div className="w-full bg-white py-1 px-4 md:px-6 lg:px-8 border-b">
       <div className="container mx-auto flex sm:flex-col md:flex-row items-center justify-between gap-x-8">
         <div className="flex items-center mb-4 md:mb-0">
           <Image 
@@ -23,7 +23,7 @@ export default function TopHeader() {
             alt="Sirajul Islam Alim Madrasah" 
             width={80} 
             height={80} 
-            className="mr-4 w-[50px] h-[50px]"
+            className="mr-4 w-[60px] h-[60px]"
           />
           <div className="text-center md:text-left hidden md:block">
             <h1 className="text-2xl font-bold text-green-800">Sirajul Islam Alim Madrasah</h1>

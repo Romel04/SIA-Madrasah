@@ -27,7 +27,7 @@ const messages = [
 ];
 
 export default function MessageSection() {
-    const plugin = useRef(Autoplay({ delay: 7000, stopOnInteraction: true }));
+    const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
     return (
         <section className="relative overflow-hidden flex items-center justify-center py-16"style={{ backgroundColor: '#08381a' }}>

@@ -1,5 +1,4 @@
-// components/sections/AboutSection.jsx
-"use client"
+"use client";
 import { useTranslation } from '@/components/layout/TranslationContext';
 import { Button } from '@/components/ui/button';
 
@@ -7,15 +6,21 @@ export default function AboutSection() {
     const { t } = useTranslation();
 
     return (
-        <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
+        <section 
+            className="py-16 relative overflow-hidden" 
+            style={{ backgroundColor: '#f8f9fa' }} // Fallback background color
+        >
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/bg2.jpg')" }} // Set your background image here
+            />
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
                         About Us
                         <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
                         <span className="absolute right-0 -bottom-4 w-full h-1 bg-[#08381a] scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-right"></span>
                     </h2>
-                    {/* <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#08381a' }}></div> */}
                 </div>
 
                 <div className="max-w-3xl mx-auto text-center">

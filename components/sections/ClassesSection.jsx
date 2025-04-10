@@ -1,4 +1,3 @@
-// components/sections/ClassesSection.jsx
 "use client";
 
 import { useRef } from 'react';
@@ -10,7 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 const classes = [
     {
         id: 1,
-        name: "আলেম আলেমা দাওরায় হাদিস (মাস্টার্স) একাডেমিক ক্লাস",
+        name: "আলেম আলেমা দাওরায় হাদিস (মাস্টার্স) একাডেমিক ক্লাস",
         image: "/assets/classes/1.webp",
         level: "Intermediate",
         seats: 40
@@ -53,11 +52,15 @@ const classes = [
 ];
 
 export default function ClassesSection() {
-    const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+    const plugin = useRef(Autoplay({ delay: 2500, stopOnInteraction: true }));
 
     return (
-        <section className="py-16" style={{ backgroundColor: '#f8f9fa' }}>
-            <div className="container mx-auto px-4">
+        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/bg2.jpg')" }}
+            />
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-4 relative inline-block group" style={{ color: '#08381a' }}>
                         Our Classes
@@ -83,19 +86,21 @@ export default function ClassesSection() {
                             {classes.map((classItem) => (
                                 <CarouselItem key={classItem.id} className="md:basis-1/2 lg:basis-1/3">
                                     <div className="w-full md:w-full flex-shrink-0 px-2">
-                                        <Card className="overflow-hidden h-full">
+                                        <Card className="overflow-hidden h-96">
                                             <div className="relative h-52 w-full overflow-hidden">
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center"
                                                     style={{ backgroundImage: `url(${classItem.image})` }}
                                                 />
                                             </div>
-                                            <CardContent className="pt-6">
-                                                <h3 className="text-xl font-bold mb-2" style={{ color: '#08381a' }}>
+                                            <CardContent className="pt-6 h-24">
+                                                <h3 
+                                                    className="text-xl font-bold mb-2 line-clamp-2 overflow-hidden text-ellipsis" 
+                                                    style={{ color: '#08381a' }}
+                                                    title={classItem.name} // Shows full text on hover
+                                                >
                                                     {classItem.name}
                                                 </h3>
-                                                {/* <p className="text-gray-600 mb-1">Level: {classItem.level}</p>
-                                                <p className="text-gray-600">Available Seats: {classItem.seats}</p> */}
                                             </CardContent>
                                             <CardFooter className="flex justify-between pt-0">
                                                 <Button variant="outline" style={{ borderColor: '#08381a', color: '#08381a' }}>
