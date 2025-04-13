@@ -17,7 +17,7 @@ export default function Footer() {
         <footer id='footer' className="bg-[#08381a] text-white pt-12 pb-6 px-3 sm:px-8">
             <div className="container mx-auto">
                 {/* Footer top section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mx-24">
                     {/* Column 1: Logo and About */}
                     <div className="flex flex-col items-center md:items-start">
                         <div className="flex flex-col items-center mb-4">
